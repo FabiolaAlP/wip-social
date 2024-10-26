@@ -21,7 +21,7 @@ const Navbar = () => {
                         {isMenuOpen ? <Icon icon="line-md:menu-to-close-transition" className='w-8 h-8 text-black dark:text-white' /> : <Icon icon="line-md:close-to-menu-transition" className='w-8 h-8 text-black dark:text-white' />}
                     </button>
                 </div>
-                <div className="hidden space-x-4 md:flex">
+                <div className="hidden space-x-4 md:flex md:items-center">
                     {!isLoggedIn && (
                         <>
                             <Link to="/sign-up" className="text-black dark:text-white">Sign Up</Link>
