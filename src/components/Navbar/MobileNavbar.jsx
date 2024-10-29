@@ -5,7 +5,7 @@ import { Icon } from '@iconify/react/dist/iconify.js'
 const MobileNavbar = ({ toggleTheme, isLoggedIn, theme }) => {
 
     return (
-        <div className="absolute left-0 w-full p-6 text-black rounded-lg dark:text-white bg-white/50 dark:bg-slate-800 top-16 md:hidden">
+        <div className="absolute left-0 w-full p-6 text-black bg-white dark:text-white dark:bg-slate-800 top-16 md:hidden">
             <div className="flex flex-col items-center space-y-4">
                 {!isLoggedIn && (
                     <>

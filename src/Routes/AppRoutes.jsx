@@ -4,6 +4,7 @@ import HomePage from "../Pages/HomePage";
 import SignIn from "../Pages/SignIn";
 import { Navigate } from "react-router-dom";
 import SignUp from "../Pages/SignUp";
+import PrivateRoute from "../components/PrivateRoute/PrivateRoute"
 const AppRoutes = [
     {
         path: '/',

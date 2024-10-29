@@ -13,7 +13,7 @@ const Navbar = () => {
         setIsMenuOpen(!isMenuOpen);
     }
     return (
-        <nav className='p-4 text-white border-b-2 shadow-lg bg-white/50 dark:bg-slate-800 backdrop-blur-lg border-slate-800 dark:border-slate-200'>
+        <nav className='p-4 text-white border-b-2 shadow-lg bg-white/50 dark:bg-slate-800 border-slate-800 dark:border-slate-200'>
             <div className='container flex items-center justify-between mx-auto'>
                 <Icon icon="mdi:people-group" className='w-10 h-10 text-black dark:text-white hover:animate-pulse' />
                 <div className='md:hidden'>
