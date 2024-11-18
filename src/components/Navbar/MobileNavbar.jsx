@@ -11,14 +11,14 @@ const MobileNavbar = ({ toggleTheme, isLoggedIn, theme }) => {
                     <>
                         <Link to="/sign-up" className="hover:text-blue-400">Sign Up</Link>
                         <Link to="/sign-in" className="hover:text-blue-400">Sign In</Link>
-                        {theme === "dark" ? <Icon onClick={toggleTheme} icon="line-md:sun-rising-filled-loop" className='w-8 h-8 text-black dark:text-white' /> : <Icon onClick={toggleTheme} icon="line-md:moon-rising-filled-alt-loop" className='w-8 h-8 text-black dark:text-white' />}
+                        {theme === "dark" ? <Icon onClick={toggleTheme} icon="line-md:sun-rising-filled-loop" className='w-8 h-8 text-black dark:text-white hover:text-blue-400' /> : <Icon onClick={toggleTheme} icon="line-md:moon-rising-filled-alt-loop" className='w-8 h-8 text-black dark:text-white hover:text-blue-400' />}
                     </>
                 )}
                 {isLoggedIn && (
                     <>
                         <Link to="/" className="hover:text-blue-400">Social</Link>
                         <button className="hover:text-blue-400">Logout</button>
-                        {theme === "dark" ? <Icon onClick={toggleTheme} icon="line-md:sun-rising-filled-loop" className='w-8 h-8 text-black dark:text-white' /> : <Icon onClick={toggleTheme} icon="line-md:moon-rising-filled-alt-loop" className='w-8 h-8 text-black dark:text-white' />}
+                        {theme === "dark" ? <Icon onClick={toggleTheme} icon="line-md:sun-rising-filled-loop" className='w-8 h-8 text-black dark:text-white hover:text-blue-400' /> : <Icon onClick={toggleTheme} icon="line-md:moon-rising-filled-alt-loop" className='w-8 h-8 text-black dark:text-white hover:text-blue-400' />}
                     </>
                 )}
             </div>
