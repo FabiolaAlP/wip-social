@@ -24,16 +24,16 @@ const Navbar = () => {
                 <div className="hidden space-x-4 md:flex md:items-center">
                     {!isLoggedIn && (
                         <>
-                            <Link to="/sign-up" className="text-black dark:text-white">Sign Up</Link>
-                            <Link to="/sign-in" className="text-black dark:text-white">Sign In</Link>
-                            {theme === "dark" ? <Icon onClick={toggleTheme} icon="line-md:sun-rising-filled-loop" className='w-8 h-8 text-black dark:text-white' /> : <Icon onClick={toggleTheme} icon="line-md:moon-rising-filled-alt-loop" className='w-8 h-8 text-black dark:text-white' />}
+                            <Link to="/sign-up" className="text-black dark:text-white hover:text-blue-400">Sign Up</Link>
+                            <Link to="/sign-in" className="text-black dark:text-white hover:text-blue-400">Sign In</Link>
+                            {theme === "dark" ? <Icon onClick={toggleTheme} icon="line-md:sun-rising-filled-loop" className='w-8 h-8 text-black dark:text-white hover:text-blue-400' /> : <Icon onClick={toggleTheme} icon="line-md:moon-rising-filled-alt-loop" className='w-8 h-8 text-black dark:text-white hover:text-blue-400' />}
                         </>
                     )}
                     {isLoggedIn && (
                         <>
-                            <Link to="/" className="text-black dark:text-white">Social</Link>
+                            <Link to="/" className="text-black dark:text-white hover:text-blue-400">Social</Link>
                             <button className="text-black dark:text-white">Logout</button>
-                            {theme === "dark" ? <Icon onClick={toggleTheme} icon="line-md:sun-rising-filled-loop" className='w-8 h-8 text-black dark:text-white' /> : <Icon onClick={toggleTheme} icon="line-md:moon-rising-filled-alt-loop" className='w-8 h-8 text-black dark:text-white' />}
+                            {theme === "dark" ? <Icon onClick={toggleTheme} icon="line-md:sun-rising-filled-loop" className='w-8 h-8 text-black dark:text-white hover:text-blue-400' /> : <Icon onClick={toggleTheme} icon="line-md:moon-rising-filled-alt-loop" className='w-8 h-8 text-black dark:text-white hover:text-blue-400' />}
                         </>
                     )}
                 </div>
