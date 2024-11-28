@@ -6,10 +6,10 @@ const PrivateRoute = ({ children }) => {
     const { token, loading } = useAuth();
     if (loading) {
         //wait for token to be loaded
-        return <div className="container p-4 bg-gray-800 rounded-lg"><span className="text-white">Loading...</span></div>
+        return <div className="container p-4 bg-white rounded-lg dark:bg-slate-800 border-slate-900 dark:border-slate-200"><span className="text-black dark:text-white">Loading...</span></div>
     }
     return (
-        token ? children : <Navigate to="/login" />
+        token ? children : <Navigate to="/sign-in" />
     )
 }
 

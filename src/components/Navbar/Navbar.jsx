@@ -7,8 +7,9 @@ import MobileNavbar from './MobileNavbar';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const { theme, toggleTheme } = useTheme();
-    const { isLoggedIn } = useAuth();
+    const { token, logout } = useAuth();
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     }
@@ -32,7 +33,7 @@ const Navbar = () => {
                     {isLoggedIn && (
                         <>
                             <Link to="/" className="text-black dark:text-white hover:text-blue-400">Social</Link>
-                            <button className="text-black dark:text-white">Logout</button>
+                            <button className="text-black dark:text-white" onClick={logout}>Logout</button>
                             {theme === "dark" ? <Icon onClick={toggleTheme} icon="line-md:sun-rising-filled-loop" className='w-8 h-8 text-black dark:text-white hover:text-blue-400' /> : <Icon onClick={toggleTheme} icon="line-md:moon-rising-filled-alt-loop" className='w-8 h-8 text-black dark:text-white hover:text-blue-400' />}
                         </>
                     )}

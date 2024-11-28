@@ -5,6 +5,7 @@ import SignIn from "../Pages/SignIn";
 import { Navigate } from "react-router-dom";
 import SignUp from "../Pages/SignUp";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute"
+import Profile from "../Pages/Profile";
 const AppRoutes = [
     {
         path: '/',
@@ -14,6 +15,10 @@ const AppRoutes = [
             { path: 'home', element: <HomePage /> },
             { path: 'sign-up', element: <SignUp /> },
             { path: 'sign-in', element: <SignIn /> },
+            {
+                path: '/shorten',
+                element: <PrivateRoute><Profile /></PrivateRoute>
+            },
         ],
     },
     { path: '*', element: <Navigate to="/" /> },
