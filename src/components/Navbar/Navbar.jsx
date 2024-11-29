@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Icon } from '@iconify/react/dist/iconify.js'
 import { useTheme } from '../../Context/ThemeContext';
 import { useAuth } from '../../Context/AuthContext';
@@ -9,7 +9,13 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const { theme, toggleTheme } = useTheme();
-    const { token, logout } = useAuth();
+    const { token, loading, logout } = useAuth();
+    useEffect(() => {
+        if (!loading) {  // Only update isLoggedIn after loading finishes
+            setIsLoggedIn(!!token);
+        }
+
+    }, [token, loading])
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     }

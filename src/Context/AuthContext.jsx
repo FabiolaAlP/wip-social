@@ -25,7 +25,6 @@ export const AuthProvider = ({ children }) => {
         try {
             const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/auth/sign-in`, { emailOrUsername, password });
             const token = response.data.token;
-            const username = response.data.username;
             setToken(token);
             localStorage.setItem("authToken", token);
             axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
