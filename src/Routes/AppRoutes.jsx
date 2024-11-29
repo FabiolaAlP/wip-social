@@ -6,6 +6,7 @@ import { Navigate } from "react-router-dom";
 import SignUp from "../Pages/SignUp";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute"
 import Profile from "../Pages/Profile";
+import UserFeed from "../Pages/UserFeed";
 const AppRoutes = [
     {
         path: '/',
@@ -16,8 +17,8 @@ const AppRoutes = [
             { path: 'sign-up', element: <SignUp /> },
             { path: 'sign-in', element: <SignIn /> },
             {
-                path: '/shorten',
-                element: <PrivateRoute><Profile /></PrivateRoute>
+                path: '/feed',
+                element: <PrivateRoute><UserFeed /></PrivateRoute>
             },
         ],
     },

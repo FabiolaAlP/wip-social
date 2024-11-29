@@ -11,7 +11,8 @@ export const AuthProvider = ({ children }) => {
         } else {
             delete axios.defaults.headers.common["Authorization"];
         }
-    }, [token])
+        setIsLoading(false);
+    }, [token]);
     const signUp = async (email, username, password) => {
         try {
             const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/auth/sign-up`, { email, username, password });
@@ -23,14 +24,17 @@ export const AuthProvider = ({ children }) => {
     const signIn = async (emailOrUsername, password) => {
         try {
             const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/auth/sign-in`, { emailOrUsername, password });
-            const { token, user } = response.data;
-            console.log(user);
+            const token = response.data.token;
+            const username = response.data.username;
             setToken(token);
             localStorage.setItem("authToken", token);
             axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-            toast.success(`Successfully logged in! Welcome ${user}`, { position: "top-right", duration: 4000 });
+            return response;
+            // toast.success(`Successfully logged in !Welcome ${ user }`, { position: "top-right", duration: 4000 });
         } catch (error) {
-            toast.error(`Login Failed. Try again later. ${error.message}`, { position: "top-right", duration: 5000 })
+            console.error(error.message);
+            throw error;
+            // toast.error(`Login Failed.Try again later.${ error.message }`, { position: "top-right", duration: 5000 })
         }
     }
     const logout = () => {
