@@ -67,6 +67,7 @@ const SignIn = () => {
                 </label>
                 <button className='block w-full p-4 mx-auto text-black border-2 rounded-lg bg-neutral-200 dark:bg-slate-800 dark:text-white border-slate-300 dark:border-slate-200 sm:w-40 hover:scale-110' type='submit'>Sign In</button>
             </form>
+            <span className='block my-2 text-center text-white'>Don't have an account? <Link className='hover:underline' to="/sign-up">Sign Up</Link></span>
         </div>
     )
 }
