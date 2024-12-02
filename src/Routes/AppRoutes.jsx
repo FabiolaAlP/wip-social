@@ -20,6 +20,10 @@ const AppRoutes = [
                 path: '/feed',
                 element: <PrivateRoute><UserFeed /></PrivateRoute>
             },
+            {
+                path: '/profile',
+                element: <PrivateRoute><Profile /></PrivateRoute>
+            },
         ],
     },
     { path: '*', element: <Navigate to="/" /> },
