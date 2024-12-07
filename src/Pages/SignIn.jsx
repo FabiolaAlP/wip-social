@@ -19,7 +19,7 @@ const SignIn = () => {
             const username = response.data.username;
             toast.success(`Welcome, ${username}`, { position: "top-right", duration: 4000 });
             setTimeout(() => {
-                navigate("/feed")
+                navigate("/profile")
             }, 3000)
         } catch (error) {
             if (error.response) {
