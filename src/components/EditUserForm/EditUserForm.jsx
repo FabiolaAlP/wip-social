@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useUser } from "../../api/userApi/userQueries";
 import { useEditProfile } from "../../api/userApi/userMutations";
 import { yupResolver } from "@hookform/resolvers/yup";
+import DataStatus from '../DataStatus/DataStatus';
 import toast from 'react-hot-toast';
 
 const EditUserForm = () => {
@@ -31,7 +32,7 @@ const EditUserForm = () => {
                 formData.append("avatar", avatar[0]);
             }
             const response = await editProfileMutation(formData);
-
+            // TODO: Fix imagePreview so it properly clear after sending data
             setImagePreview('');
 
             toast.success(`${response.message}`, { duration: 4000, position: "top-right" });
@@ -116,11 +117,8 @@ const EditUserForm = () => {
 
                 <button className='block w-full p-4 mx-auto text-black border-2 rounded-lg bg-neutral-200 dark:bg-slate-800 dark:text-white border-slate-300 dark:border-slate-200 sm:w-40 hover:scale-110' type='submit'>Update</button>
             </form>
-            <section className='w-full h-auto max-w-md mx-auto my-2'>
-                {isPending && <span className='block font-bold text-center text-blue-500'>Sending data...</span>}
-                {isError && <span className='block font-bold text-center text-red-400'>{error.message}</span>}
-                {isSuccess && <span className='block font-bold text-center text-green-500'>Profile updated successfully!</span>}
-            </section>
+            {/* TODO: create component for status updates */}
+            <DataStatus isPending={isPending} isSuccess={isSuccess} isError={isError} error={error} />
         </>
 
     )
